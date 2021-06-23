@@ -1,22 +1,22 @@
 #!/bin/sh
 ### BEGIN INIT INFO
-# Provides: vpnclient
+# Provides: softether-vpnclient
 # Required-Start: $network
 # Required-Stop:
 # Default-Start: 2 3 4 5
 # Default-Stop: 0 1 6
 # Short-Description: Start VPN Client at boot time
 # description: Start VPN Client at boot time.
-# processname: vpnclient
+# processname: softether-vpnclient
 ### END INIT INFO
 case "$1" in
     start)
         echo "Starting VPN Client"
-        /opt/SoftEtherVPN_Stable/vpnclient start
+        /usr/bin/vpnclient start
         ;;
     stop)
         echo "Stopping VPN Client"
-        /opt/SoftEtherVPN_Stable/vpnclient stop
+        /usr/bin/vpnclient stop
         ;;
     *)
         echo "Usage: /etc/init.d/vpnclient {start|stop}"

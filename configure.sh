@@ -18,9 +18,9 @@ PASSWORD=$4
 ACCOUNTNAME=$5  # for identifying connections
 HUB=${6:-vpn}
 
-sudo /opt/SoftEtherVPN_Stable/vpncmd /client localhost /cmd niccreate "$ACCOUNTNAME"
-sudo /opt/SoftEtherVPN_Stable/vpncmd /client localhost /cmd accountcreate "$ACCOUNTNAME" /SERVER:"$SERVER" /HUB:"$HUB" /USERNAME:"$USERNAME" /NICNAME:"$ACCOUNTNAME"
-sudo /opt/SoftEtherVPN_Stable/vpncmd /client localhost /cmd accountpasswordset "$ACCOUNTNAME" /PASSWORD:"$PASSWORD" /TYPE:standard
-sudo /opt/SoftEtherVPN_Stable/vpncmd /client localhost /cmd accountdetailset "$ACCOUNTNAME" /MAXTCP:32 /INTERVAL:1 /TTL:0 /HALF:yes /BRIDGE:no /MONITOR:no /NOTRACK:yes /NOQOS:yes
-sudo /opt/SoftEtherVPN_Stable/vpncmd /client localhost /cmd accountstartupset "$ACCOUNTNAME"
-sudo /opt/SoftEtherVPN_Stable/vpncmd /client localhost /cmd accountconnect "$ACCOUNTNAME"
+sudo /usr/bin/vpncmd /client localhost /cmd niccreate "$ACCOUNTNAME"
+sudo /usr/bin/vpncmd /client localhost /cmd accountcreate "$ACCOUNTNAME" /SERVER:"$SERVER" /HUB:"$HUB" /USERNAME:"$USERNAME" /NICNAME:"$ACCOUNTNAME"
+sudo /usr/bin/vpncmd /client localhost /cmd accountpasswordset "$ACCOUNTNAME" /PASSWORD:"$PASSWORD" /TYPE:standard
+sudo /usr/bin/vpncmd /client localhost /cmd accountdetailset "$ACCOUNTNAME" /MAXTCP:32 /INTERVAL:1 /TTL:0 /HALF:yes /BRIDGE:no /MONITOR:no /NOTRACK:yes /NOQOS:yes
+sudo /usr/bin/vpncmd /client localhost /cmd accountstartupset "$ACCOUNTNAME"
+sudo /usr/bin/vpncmd /client localhost /cmd accountconnect "$ACCOUNTNAME"

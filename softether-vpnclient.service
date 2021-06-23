@@ -5,8 +5,8 @@ After=network.target
 [Service]
 User=root
 Group=root
-ExecStart=/opt/SoftEtherVPN_Stable/vpnclient start
-ExecStop=/opt/SoftEtherVPN_Stable/vpnclient stop
+ExecStart=/usr/bin/vpnclient start
+ExecStop=/usr/bin/vpnclient stop
 Type=forking
 
 [Install]
