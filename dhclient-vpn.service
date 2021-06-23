@@ -1,0 +1,14 @@
+[Unit]
+Description=dhclient@vpn
+After=network.target softether-vpnclient.service
+
+[Service]
+User=root
+Group=root
+ExecStartPre=/bin/sleep 15
+ExecStart=/usr/sbin/dhclient -v vpn_lintel
+ExecStop=/usr/sbin/dhclient -r vpn_lintel
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
