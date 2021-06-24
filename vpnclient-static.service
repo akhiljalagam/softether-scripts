@@ -5,9 +5,12 @@ After=network.target
 [Service]
 User=root
 Group=root
+Type=oneshot
+RemainAfterExit=yes
 ExecStart=/usr/bin/vpnclient start
+ExecStart=/usr/bin/sleep 5
+ExecStart=/usr/sbin/ip a add 192.168.70.12/24 brd 192.168.70.255 dev vpn_<name>
 ExecStop=/usr/bin/vpnclient stop
-Type=forking
 
 [Install]
 WantedBy=multi-user.target

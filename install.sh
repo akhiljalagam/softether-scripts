@@ -9,10 +9,4 @@ cd /opt/SoftEtherVPN_Stable
 ./configure
 make
 make install
-cp softether-vpnclient.service /etc/systemd/system/
-systemctl daemon-reload
-systemctl enable softether-vpnclient
-systemctl start softether-vpnclient
-systemctl status softether-vpnclient
-ip a
-set +x
+set +xe
